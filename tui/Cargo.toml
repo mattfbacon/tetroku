@@ -1,0 +1,13 @@
+[package]
+edition = "2021"
+name = "tetroku-tui"
+version = "0.1.0"
+
+[dependencies]
+anyhow = "1"
+cursive = { version = "0.20", default-features = false, features = [
+	# Termion is much smaller than Crossterm, and I don't care about non-ANSI terminals.
+	"termion-backend",
+] }
+rand = "0.8"
+tetroku-lib = { path = "../lib" }
